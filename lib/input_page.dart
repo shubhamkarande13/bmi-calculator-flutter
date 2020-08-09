@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reuseable_card.dart';
-
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF1D1E33);
-const bottomContainerColor = Color(0xFFEB1555);
-const inactiveCardColor = Color(0xFF111328);
+import 'constants.dart';
 
 enum Gender{
   male,female,
@@ -29,6 +25,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(child: Row(
             children: <Widget>[
@@ -37,26 +34,42 @@ class _InputPageState extends State<InputPage> {
                 setState(() {
                   selectedGender = Gender.male;
                 });
-              },  colour: selectedGender== Gender.male ? activeCardColor : inactiveCardColor,
+              },  colour: selectedGender== Gender.male ? kActiveCardColor : kInactiveCardColor,
               cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE',),),),
               Expanded(child: ReuseableCard(
                 onPress:(){
                   setState(() {
                     selectedGender=Gender.female;
                   });
-                }, colour: selectedGender==Gender.female ? activeCardColor : inactiveCardColor,cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE',),),
+                }, colour: selectedGender==Gender.female ? kActiveCardColor : kInactiveCardColor,cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE',),),
               ),],
           )),
-          Expanded(child: ReuseableCard(colour: activeCardColor,),),
+          Expanded(
+            child: ReuseableCard(colour: kActiveCardColor,
+            cardChild: Column(
+              children: <Widget>[
+                Text('HEIGHT',style: kLabelTextStyle,),
+                Row(
+                  children: <Widget>[
+                    Text('180', style: TextStyle(
+                      fontSize: 50.0,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            ),),
           Expanded(child: Row(
             children: <Widget>[
-              Expanded(child: ReuseableCard(colour: activeCardColor,),),
-              Expanded(child: ReuseableCard(colour: activeCardColor,),),],),),
+              Expanded(child: ReuseableCard(colour: kActiveCardColor,),),
+              Expanded(child: ReuseableCard(colour: kActiveCardColor,),),],),),
         Container(
-          color: bottomContainerColor,
+          color: kBottomContainerColor,
           margin: EdgeInsets.only(top: 10.0),
           width: double.infinity,
-          height: bottomContainerHeight,
+          height: kBottomContainerHeight,
         )
         ],
       ),
