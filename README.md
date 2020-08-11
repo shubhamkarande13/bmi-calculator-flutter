@@ -1,6 +1,8 @@
 
 This project is a companion project to The App Brewery's Complete Flutter Development Bootcamp by Angela Yu on Udemy.
 
+Design by Ruben Vaalt (https://dribbble.com/shots/4585382-Simple-BMI-Calculator). 
+
 # BMI Calculator 💪
 
 ![Finished App](https://github.com/londonappbrewery/Images/blob/master/bmi-calc-demo.gif)
