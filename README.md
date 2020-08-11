@@ -1,4 +1,3 @@
-![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
 
 This project is a companion project to The App Brewery's Complete Flutter Development Bootcamp by Angela Yu on Udemy.
 
